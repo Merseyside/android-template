@@ -1,5 +1,3 @@
-
-
 package com.merseyside.core.di
 
 import android.content.Context
@@ -31,6 +29,4 @@ interface CoreComponent {
      * @return Context
      */
     fun context(): Context
-
-    fun newsRepository(): NewsRepository
 }

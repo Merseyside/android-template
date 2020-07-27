@@ -2,12 +2,7 @@ package com.merseyside.core.di.modules
 
 import android.content.Context
 import com.merseyside.core.BuildConfig
-import com.merseyside.core.NewsRepository
-import com.merseyside.core.db.news.NewsDao
-import com.merseyside.core.network.repository.NewsRepositoryImpl
-import com.merseyside.core.network.repository.mapper.NewsMapper
 import com.merseyside.core.utils.ConnectivityInterceptor
-import com.merseyside.newsapi.NewsApi
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -46,20 +41,4 @@ class NetworkModule {
         }
         return clientBuilder
     }
-
-    @Singleton
-    @Provides
-    fun provideNewsApi(okHttpClient: OkHttpClient.Builder): NewsApi {
-        return NewsApi(okHttpClient)
-    }
-
-    @Singleton
-    @Provides
-    fun provideRepository(
-        newsApi: NewsApi,
-        newsDao: NewsDao,
-        newsMapper: NewsMapper
-    ): NewsRepository = NewsRepositoryImpl(
-        newsApi, newsDao, newsMapper
-    )
 }

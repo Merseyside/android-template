@@ -12,7 +12,7 @@ plugins {
 android {
     compileSdkVersion(BuildAndroidConfig.COMPILE_SDK_VERSION)
 
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
 
@@ -77,10 +77,6 @@ android {
         res.srcDir("src/main/res/value/values-light")
         res.srcDir("src/main/res/value/values-night")
     }
-
-    dynamicFeatures = mutableSetOf(
-        BuildModules.Features.NEWS_LIST
-    )
 }
 
 val androidLibs = listOf(

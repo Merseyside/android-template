@@ -18,8 +18,6 @@ val merseyLibs = listOf(
 )
 
 dependencies {
-    implementation(project(BuildModules.Libraries.NEWS_API))
-
     implementation(Dependencies.ROOM)
     implementation(Dependencies.ROOM_KTX)
     implementation(Dependencies.LIFECYCLE_EXTENSIONS)

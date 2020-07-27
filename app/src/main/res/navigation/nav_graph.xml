@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/news_fragment"
-        android:name="com.merseyside.newsList.ui.view.NewsFragment"
+        android:name="com.merseyside.feature.ui.view.NewsFragment"
         android:label="NewsFragment">
     </fragment>
 

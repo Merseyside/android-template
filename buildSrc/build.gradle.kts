@@ -38,7 +38,6 @@ dependencies {
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detect")
     implementation("com.pinterest:ktlint:$ktlint")
     implementation("com.github.ben-manes:gradle-versions-plugin:$gradleVersions")
-
 }
 
 kotlinDslPluginOptions {
