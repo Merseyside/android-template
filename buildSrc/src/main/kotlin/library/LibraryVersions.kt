@@ -21,6 +21,7 @@ object LibraryVersions {
         const val androidExtensions = LibraryVersions.kotlin
         const val mokoResources = LibraryVersions.mokoResources
         const val maven = "2.1"
+        const val sqlDelight = "1.2.2"
     }
 
     object Libs {

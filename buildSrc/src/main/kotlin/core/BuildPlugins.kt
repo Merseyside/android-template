@@ -16,6 +16,10 @@ object BuildPlugins {
     val detekt = PluginDesc(id = "plugins.detekt")
     val navigationArgs = PluginDesc(id = "androidx.navigation.safeargs.kotlin")
 
+    val sqlDelight = PluginDesc(
+        id = "com.squareup.sqldelight",
+        module = "com.squareup.sqldelight:gradle-plugin:${LibraryVersions.Plugins.sqlDelight}"
+    )
 
     val kotlinMultiplatform = PluginDesc(
         id = "org.jetbrains.kotlin.multiplatform",
