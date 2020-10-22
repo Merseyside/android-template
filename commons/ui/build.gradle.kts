@@ -1,12 +1,11 @@
-
-
 import core.dependencies.Dependencies
 import core.dependencies.AnnotationProcessorsDependencies
 import core.extensions.implementation
 import core.extensions.kapt
+import core.isLocalDependencies
 
 plugins {
-    id("core.commons.android-library")
+    plugin(BuildPlugins.commonsAndroidLibrary)
 }
 
 val merseyModules = listOf(
@@ -32,7 +31,7 @@ dependencies {
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.PAGING)
 
-    if (Dependencies.isLocalDependencies) {
+    if (isLocalDependencies()) {
         merseyModules.forEach { module -> api(project(module)) }
     } else {
         merseyLibs.forEach { lib -> api(lib) }

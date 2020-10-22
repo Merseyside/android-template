@@ -1,5 +1,3 @@
-
-
 /**
  * Configuration of all gradle build plugins
  */
@@ -18,12 +16,12 @@ object BuildPlugins {
 
     val sqlDelight = PluginDesc(
         id = "com.squareup.sqldelight",
-        module = "com.squareup.sqldelight:gradle-plugin:${LibraryVersions.Plugins.sqlDelight}"
+        module = "com.squareup.sqldelight:gradle-core.plugins.plugin:${LibraryVersions.Plugins.sqlDelight}"
     )
 
     val kotlinMultiplatform = PluginDesc(
         id = "org.jetbrains.kotlin.multiplatform",
-        module = "org.jetbrains.kotlin:kotlin-gradle-plugin:${LibraryVersions.Plugins.kotlin}"
+        module = "org.jetbrains.kotlin:kotlin-gradle-core.plugins.plugin:${LibraryVersions.Plugins.kotlin}"
     )
 
     val kotlinSerialization = PluginDesc(

@@ -7,7 +7,7 @@ include(
     ":commons:views"
 )
 
-private val isLocalDependencies = false
+private val isLocalDependencies = true
 
 if (isLocalDependencies) {
 

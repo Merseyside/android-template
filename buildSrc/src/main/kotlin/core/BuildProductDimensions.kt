@@ -1,5 +1,3 @@
-
-
 /**
  * Configuration of product dimensions used on build variants
  */

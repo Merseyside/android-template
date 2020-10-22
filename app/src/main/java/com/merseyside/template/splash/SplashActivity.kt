@@ -1,10 +1,10 @@
-package com.merseyside.splash
+package com.merseyside.template.splash
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.merseyside.archy.presentation.activity.BaseActivity
-import com.merseyside.template.news.R
+import com.merseyside.template.R
 import com.merseyside.template.news.main.view.MainActivity
 import com.merseyside.utils.HandlerCanceller
 import com.merseyside.utils.delayedMainThread

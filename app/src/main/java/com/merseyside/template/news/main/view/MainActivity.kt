@@ -3,8 +3,8 @@ package com.merseyside.template.news.main.view
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.merseyside.archy.presentation.activity.BaseBindingActivity
-import com.merseyside.news.databinding.ActivityMainBinding
 import com.merseyside.template.R
+import com.merseyside.template.databinding.ActivityMainBinding
 
 class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 

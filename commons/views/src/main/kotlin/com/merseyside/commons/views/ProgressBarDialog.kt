@@ -1,12 +1,10 @@
-
-
 package com.merseyside.commons.views
 
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
-import com.merseyside.commons.ui.extensions.getString
+import com.merseyside.archy.ext.getActualString
 import com.merseyside.commons.views.databinding.ViewProgressDialogBinding
 
 /**
@@ -45,7 +43,7 @@ class ProgressBarDialog(
         setCancelable(false)
 
         viewBinding.isLoading = true
-        viewBinding.message = context.getString(messageRes)
+        viewBinding.message = context.getActualString(messageRes)
     }
 
     /**
