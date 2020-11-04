@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.merseyside.template.news.main.view.MainActivity"/>
+        <activity android:name=".news.main.view.MainActivity"/>
 
     </application>
 </manifest>

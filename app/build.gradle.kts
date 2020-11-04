@@ -1,5 +1,6 @@
 import core.dependencies.Dependencies
 import core.isLocalDependencies
+import core.dependencies.AnnotationProcessorsDependencies
 
 plugins {
     plugin(BuildPlugins.androidApplication)
@@ -13,9 +14,7 @@ plugins {
 android {
     compileSdkVersion(BuildAndroidConfig.COMPILE_SDK_VERSION)
 
-    buildFeatures {
-        dataBinding = true
-    }
+    buildFeatures.dataBinding = true
 
     dexOptions {
         javaMaxHeapSize = "2g"
@@ -89,7 +88,7 @@ val androidLibs = listOf(
     Dependencies.RECYCLE_VIEW,
     Dependencies.LIFECYCLE_EXTENSIONS,
     Dependencies.LIFECYCLE_VIEWMODEL,
-    Dependencies.CONSTRAIN_LAYOUT,
+    Dependencies.CONSTRAINT_LAYOUT,
     Dependencies.DAGGER
 )
 
@@ -121,4 +120,5 @@ dependencies {
     androidLibs.forEach { lib -> implementation(lib) }
 
     compileOnly("javax.annotation:jsr250-api:1.0")
+    kapt(AnnotationProcessorsDependencies.DATABINDING)
 }
