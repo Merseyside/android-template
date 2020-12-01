@@ -34,6 +34,15 @@ object LibraryDeps {
         val mavenPublish = PluginDesc(
             id = "maven-publish"
         )
+
+        val sqldelight = PluginDesc(
+            id = "com.squareup.sqldelight",
+            module = "com.squareup.sqldelight:gradle-plugin:${LibraryVersions.Plugins.sqlDelight}"
+        )
+
+        val kotlinParcel = PluginDesc(
+            id = "kotlin-parcelize"
+        )
     }
 
     object Libs {
@@ -65,11 +74,17 @@ object LibraryDeps {
             val lifecycle = AndroidLibrary(
                 name = "androidx.lifecycle:lifecycle-extensions:${LibraryVersions.Libs.Android.lifecycle}"
             )
+            val lifecycleViewModel = AndroidLibrary(
+                name = "androidx.lifecycle:lifecycle-viewmodel-ktx:${LibraryVersions.Libs.Android.lifecycle}"
+            )
             val cardView = AndroidLibrary(
                 name = "androidx.cardview:cardview:${LibraryVersions.Libs.Android.cardView}"
             )
             val annotation = AndroidLibrary(
                 name = "androidx.annotation:annotation:${LibraryVersions.Libs.Android.annotation}"
+            )
+            val rxjava2 = AndroidLibrary(
+                name = "io.reactivex.rxjava2:rxjava:${LibraryVersions.Libs.Android.rxjava2}"
             )
             val paging = AndroidLibrary(
                 name = "androidx.paging:paging-runtime:${LibraryVersions.Libs.Android.paging}"
@@ -132,7 +147,7 @@ object LibraryDeps {
 
         object MultiPlatform {
             val kotlinStdLib = MultiPlatformLibrary(
-                android = Android.kotlinStdLib.name,
+                android = "org.jetbrains.kotlin:kotlin-stdlib:${LibraryVersions.Common.kotlinStdLib}",
                 common = "org.jetbrains.kotlin:kotlin-stdlib-common:${LibraryVersions.Common.kotlinStdLib}"
             )
             val coroutines = MultiPlatformLibrary(

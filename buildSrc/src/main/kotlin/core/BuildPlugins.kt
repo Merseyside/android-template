@@ -10,9 +10,11 @@ object BuildPlugins {
     val kotlinAndroidExtensions = PluginDesc(id = "kotlin-android-extensions")
     val mobileMultiplatform = PluginDesc(id = "dev.icerock.mobile.multiplatform")
     val dynamicFeature = PluginDesc(id = "com.android.dynamic-feature")
+    val commonsDynamicFeature = PluginDesc(id = "core.commons.android-dynamic-feature")
     val updateDependencies = PluginDesc(id = "plugins.update-dependencies")
     val detekt = PluginDesc(id = "plugins.detekt")
     val navigationArgs = PluginDesc(id = "androidx.navigation.safeargs.kotlin")
+    val kotlinParcelize = PluginDesc(id = "kotlin-parcelize")
 
     val sqlDelight = PluginDesc(
         id = "com.squareup.sqldelight",

@@ -13,7 +13,6 @@ import core.extensions.kapt
 plugins {
     id("com.android.dynamic-feature")
     id("kotlin-android")
-    id("kotlin-android-extensions")
     id("kotlin-kapt")
 }
 
@@ -35,10 +34,6 @@ android {
     }
 
     android.buildFeatures.dataBinding = true
-
-    androidExtensions {
-        isExperimental = true
-    }
 
     flavorDimensions(BuildProductDimensions.ENVIRONMENT)
     productFlavors {
@@ -63,6 +58,13 @@ android {
         lintConfig = rootProject.file(".lint/config.xml")
         isCheckAllWarnings = true
         isWarningsAsErrors = true
+    }
+
+    sourceSets.getByName("main") {
+        res.srcDir("src/main/res/")
+        res.srcDir("src/main/res/layouts/activity")
+        res.srcDir("src/main/res/layouts/fragment")
+        res.srcDir("src/main/res/layouts/views")
     }
 }
 

@@ -10,34 +10,33 @@ object LibraryVersions {
         const val targetSdk = 29
         const val minSdk = 17
 
-        const val version = "1.2.6"
-        const val versionCode = 126
+        const val version = "1.2.7"
+        const val versionCode = 127
     }
 
     object Common {
         const val kotlinStdLib = kotlin
-        const val coroutines = "1.3.8"
-        const val serialization = "1.0.0"
+        const val coroutines = "1.4.2"
+        const val serialization = "1.0.1"
     }
 
-    const val kotlin = "1.4.20-M1"
+    const val kotlin = "1.4.20"
     private const val mokoResources = "0.13.1"
 
     object Plugins {
-        const val android = "4.0.0"
+        const val android = "4.0.1"
 
         const val kotlin = LibraryVersions.kotlin
         const val serialization = LibraryVersions.kotlin
-        const val androidExtensions = LibraryVersions.kotlin
         const val mokoResources = LibraryVersions.mokoResources
         const val maven = "2.1"
-        const val sqlDelight = "1.3.0"
+        const val sqlDelight = "1.4.4"
     }
 
     object Libs {
         object Android {
             const val appCompat = "1.2.0"
-            const val annotation = "1.1.0"
+            const val annotation = "1.2.0-alpha01"
             const val material = "1.2.1"
             const val fragment = "1.2.5"
             const val constraintLayout = "2.0.4"
@@ -56,6 +55,7 @@ object LibraryVersions {
             const val gson = "2.8.6"
             const val worker = "2.4.0"
             const val room = "2.2.5"
+            const val rxjava2 = "2.2.20"
             const val coil = "1.0.0"
         }
 

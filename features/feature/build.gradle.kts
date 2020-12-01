@@ -2,7 +2,7 @@ import core.dependencies.Dependencies
 import core.isLocalDependencies
 
 plugins {
-    plugin(BuildPlugins.dynamicFeature)
+    plugin(BuildPlugins.commonsDynamicFeature)
 }
 
 android {
