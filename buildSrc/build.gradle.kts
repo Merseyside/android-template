@@ -1,4 +1,3 @@
-
 plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
@@ -21,13 +20,14 @@ repositories {
 val kotlin = "1.4.30-M1"
 val gradle = "4.1.1"
 val multiplatform = "0.8.0"
-val mavenVersion = "2.1"
 val navigation = "2.3.0-alpha02"
 val graphGenerator = "0.6.0-SNAPSHOT"
 val detect = "1.2.2"
 val ktlint = "0.36.0"
 val gradleVersions = "0.27.0"
 
+//Optional
+val mavenVersion = "2.1"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin")
@@ -35,11 +35,12 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin")
     implementation("org.jetbrains.kotlin:kotlin-serialization:$kotlin")
     implementation("androidx.navigation:navigation-safe-args-gradle-plugin:$navigation")
-    implementation("com.github.dcendents:android-maven-gradle-plugin:$mavenVersion")
     implementation("dev.icerock:mobile-multiplatform:$multiplatform")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detect")
     implementation("com.pinterest:ktlint:$ktlint")
     implementation("com.github.ben-manes:gradle-versions-plugin:$gradleVersions")
+
+    implementation("com.github.dcendents:android-maven-gradle-plugin:$mavenVersion")
 }
 
 kotlinDslPluginOptions {

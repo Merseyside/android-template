@@ -1,5 +1,3 @@
-
-
 package com.merseyside.core.di.modules
 
 import com.merseyside.core.di.CoreComponent
@@ -11,6 +9,6 @@ import dagger.Module
  * @see Module
  */
 @Module
-abstract class UtilsModule {
+class UtilsModule {
 
 }

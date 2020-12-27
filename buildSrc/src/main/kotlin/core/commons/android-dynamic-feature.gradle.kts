@@ -33,9 +33,7 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    dataBinding {
-        isEnabled = true
-    }
+    android.dataBinding.isEnabled = true
 
     flavorDimensions(BuildProductDimensions.ENVIRONMENT)
     productFlavors {
@@ -61,6 +59,13 @@ android {
         isCheckAllWarnings = true
         isWarningsAsErrors = true
     }
+
+    sourceSets.getByName("main") {
+        res.srcDir("src/main/res/")
+        res.srcDir("src/main/res/layouts/activity")
+        res.srcDir("src/main/res/layouts/fragment")
+        res.srcDir("src/main/res/layouts/views")
+    }
 }
 
 dependencies {
@@ -79,7 +84,7 @@ dependencies {
     implementation(Dependencies.CORE_KTX)
     implementation(Dependencies.ACTIVITY_KTX)
     implementation(Dependencies.FRAGMENT_KTX)
-    implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.DAGGER)
 
     kapt(AnnotationProcessorsDependencies.DAGGER)

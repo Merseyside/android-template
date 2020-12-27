@@ -18,8 +18,7 @@ import javax.inject.Singleton
     ContextModule::class,
     NetworkModule::class,
     DatabaseModule::class,
-    UtilsModule::class
-])
+    UtilsModule::class])
 interface CoreComponent {
 
     /**

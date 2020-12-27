@@ -1,7 +1,8 @@
 import core.dependencies.Dependencies
+import core.isLocalDependencies
 
 plugins {
-    id("core.commons.android-dynamic-feature")
+    plugin(BuildPlugins.commonsDynamicFeature)
 }
 
 android {
@@ -24,7 +25,7 @@ val merseyLibs = listOf(
 )
 
 dependencies {
-    if (Dependencies.isLocalDependencies) {
+    if (isLocalDependencies()) {
         merseyModules.forEach { module -> api(project(module)) }
     } else {
         merseyLibs.forEach { lib -> api(lib) }

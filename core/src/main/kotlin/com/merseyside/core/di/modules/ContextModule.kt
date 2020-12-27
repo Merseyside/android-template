@@ -1,5 +1,3 @@
-
-
 package com.merseyside.core.di.modules
 
 import android.app.Application

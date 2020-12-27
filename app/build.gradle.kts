@@ -1,4 +1,6 @@
 import core.dependencies.Dependencies
+import core.isLocalDependencies
+import core.dependencies.AnnotationProcessorsDependencies
 
 plugins {
     plugin(BuildPlugins.androidApplication)
@@ -85,7 +87,7 @@ val androidLibs = listOf(
     Dependencies.RECYCLE_VIEW,
     Dependencies.LIFECYCLE_EXTENSIONS,
     Dependencies.LIFECYCLE_VIEWMODEL,
-    Dependencies.CONSTRAIN_LAYOUT,
+    Dependencies.CONSTRAINT_LAYOUT,
     Dependencies.DAGGER
 )
 
@@ -117,4 +119,5 @@ dependencies {
     androidLibs.forEach { lib -> implementation(lib) }
 
     compileOnly("javax.annotation:jsr250-api:1.0")
+    kapt(AnnotationProcessorsDependencies.DATABINDING)
 }

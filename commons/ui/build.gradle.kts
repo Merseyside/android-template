@@ -2,9 +2,10 @@ import core.dependencies.Dependencies
 import core.dependencies.AnnotationProcessorsDependencies
 import core.extensions.implementation
 import core.extensions.kapt
+import core.isLocalDependencies
 
 plugins {
-    id("core.commons.android-library")
+    plugin(BuildPlugins.commonsAndroidLibrary)
 }
 
 val merseyModules = listOf(
@@ -22,7 +23,7 @@ dependencies {
 
     implementation(Dependencies.LIFECYCLE_EXTENSIONS)
     implementation(Dependencies.LIFECYCLE_VIEWMODEL)
-    implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.RECYCLE_VIEW)
     implementation(Dependencies.CORE_KTX)
     implementation(Dependencies.FRAGMENT_KTX)

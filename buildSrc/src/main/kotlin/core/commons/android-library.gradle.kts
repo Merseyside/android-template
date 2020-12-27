@@ -34,9 +34,7 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    dataBinding {
-        isEnabled = true
-    }
+    android.buildFeatures.dataBinding = true
 
     flavorDimensions(BuildProductDimensions.ENVIRONMENT)
     productFlavors {
@@ -63,10 +61,12 @@ android {
 
 dependencies {
     implementation(Dependencies.KOTLIN)
+    implementation(Dependencies.ANNOTATION)
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.COROUTINES_ANDROID)
     implementation(Dependencies.DAGGER)
     implementation(Dependencies.SERIALIZATION)
 
     kapt(AnnotationProcessorsDependencies.DAGGER)
+    kapt(AnnotationProcessorsDependencies.DATABINDING)
 }

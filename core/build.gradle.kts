@@ -2,9 +2,10 @@ import core.dependencies.Dependencies
 import core.dependencies.AnnotationProcessorsDependencies
 import core.extensions.implementation
 import core.extensions.kapt
+import core.isLocalDependencies
 
 plugins {
-    id("core.commons.android-library")
+    plugin(BuildPlugins.commonsAndroidLibrary)
 }
 
 val merseyModules = listOf(
