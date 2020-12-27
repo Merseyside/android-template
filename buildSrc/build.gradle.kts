@@ -3,6 +3,8 @@ plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
     `kotlin-dsl-precompiled-script-plugins`
+    kotlin("jvm") version "1.4.30-M1"
+    kotlin("plugin.serialization") version "1.4.30-M1"
 }
 
 repositories {
@@ -16,9 +18,9 @@ repositories {
     maven("https://ci.android.com/builds/submitted/5837096/androidx_snapshot/latest/repository")
 }
 
-val kotlin = "1.3.72"
-val gradle = "4.0.0"
-val multiplatform = "0.6.1"
+val kotlin = "1.4.30-M1"
+val gradle = "4.1.1"
+val multiplatform = "0.8.0"
 val mavenVersion = "2.1"
 val navigation = "2.3.0-alpha02"
 val graphGenerator = "0.6.0-SNAPSHOT"

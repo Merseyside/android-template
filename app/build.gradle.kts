@@ -4,7 +4,6 @@ plugins {
     plugin(BuildPlugins.androidApplication)
     plugin(BuildPlugins.kotlinAndroid)
     plugin(BuildPlugins.kotlinKapt)
-    plugin(BuildPlugins.kotlinAndroidExtensions)
     plugin(BuildPlugins.kotlinSerialization)
     plugin(BuildPlugins.navigationArgs)
 }
@@ -12,9 +11,7 @@ plugins {
 android {
     compileSdkVersion(BuildAndroidConfig.COMPILE_SDK_VERSION)
 
-    buildFeatures {
-        dataBinding = true
-    }
+    buildFeatures.dataBinding = true
 
     dexOptions {
         javaMaxHeapSize = "2g"
@@ -111,7 +108,7 @@ val merseyLibs = listOf(
 dependencies {
     modulez.forEach { module -> implementation(project(module)) }
 
-    if (Dependencies.isLocalDependencies) {
+    if (isLocalDependencies()) {
         merseyModules.forEach { module -> api(project(module)) }
     } else {
         merseyLibs.forEach { lib -> api(lib) }

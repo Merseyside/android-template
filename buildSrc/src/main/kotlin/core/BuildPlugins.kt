@@ -9,7 +9,6 @@ object BuildPlugins {
     val commonsAndroidLibrary = PluginDesc(id = "core.commons.android-library")
     val kotlinKapt = PluginDesc(id = "kotlin-kapt")
     val kotlinAndroid = PluginDesc(id = "kotlin-android")
-    val kotlinAndroidExtensions = PluginDesc(id = "kotlin-android-extensions")
     val mobileMultiplatform = PluginDesc(id = "dev.icerock.mobile.multiplatform")
     val dynamicFeature = PluginDesc(id = "com.android.dynamic-feature")
     val updateDependencies = PluginDesc(id = "plugins.update-dependencies")

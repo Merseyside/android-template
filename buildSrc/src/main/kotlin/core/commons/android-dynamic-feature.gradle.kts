@@ -1,5 +1,3 @@
-
-
 package core.commons
 
 import BuildAndroidConfig
@@ -15,7 +13,6 @@ import core.extensions.kapt
 plugins {
     id("com.android.dynamic-feature")
     id("kotlin-android")
-    id("kotlin-android-extensions")
     id("kotlin-kapt")
 }
 
@@ -38,10 +35,6 @@ android {
 
     dataBinding {
         isEnabled = true
-    }
-
-    androidExtensions {
-        isExperimental = true
     }
 
     flavorDimensions(BuildProductDimensions.ENVIRONMENT)
@@ -84,6 +77,7 @@ dependencies {
     implementation(Dependencies.LIFECYCLE_EXTENSIONS)
     implementation(Dependencies.LIFECYCLE_VIEWMODEL)
     implementation(Dependencies.CORE_KTX)
+    implementation(Dependencies.ACTIVITY_KTX)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.CONSTRAIN_LAYOUT)
     implementation(Dependencies.DAGGER)

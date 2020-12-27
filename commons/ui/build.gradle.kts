@@ -1,5 +1,3 @@
-
-
 import core.dependencies.Dependencies
 import core.dependencies.AnnotationProcessorsDependencies
 import core.extensions.implementation
@@ -32,7 +30,7 @@ dependencies {
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.PAGING)
 
-    if (Dependencies.isLocalDependencies) {
+    if (isLocalDependencies()) {
         merseyModules.forEach { module -> api(project(module)) }
     } else {
         merseyLibs.forEach { lib -> api(lib) }

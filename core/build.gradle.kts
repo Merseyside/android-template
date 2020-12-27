@@ -29,7 +29,7 @@ dependencies {
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.PAGING)
 
-    if (Dependencies.isLocalDependencies) {
+    if (isLocalDependencies()) {
         merseyModules.forEach { module -> api(project(module)) }
     } else {
         merseyLibs.forEach { lib -> api(lib) }
