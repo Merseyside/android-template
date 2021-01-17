@@ -1,6 +1,7 @@
 import core.dependencies.Dependencies
 import core.isLocalDependencies
 import core.dependencies.AnnotationProcessorsDependencies
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     plugin(BuildPlugins.androidApplication)
@@ -22,6 +23,12 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
     }
 
     defaultConfig {
@@ -79,7 +86,6 @@ android {
 }
 
 val androidLibs = listOf(
-    Dependencies.KOTLIN,
     Dependencies.APPCOMPAT,
     Dependencies.MATERIAL,
     Dependencies.NAVIGATION_FRAGMENT,
@@ -88,7 +94,8 @@ val androidLibs = listOf(
     Dependencies.LIFECYCLE_EXTENSIONS,
     Dependencies.LIFECYCLE_VIEWMODEL,
     Dependencies.CONSTRAINT_LAYOUT,
-    Dependencies.DAGGER
+    Dependencies.DAGGER,
+    Dependencies.TYPED_DATASTORE
 )
 
 val modulez = listOf(
@@ -117,7 +124,5 @@ dependencies {
     }
 
     androidLibs.forEach { lib -> implementation(lib) }
-
     compileOnly("javax.annotation:jsr250-api:1.0")
-    kapt(AnnotationProcessorsDependencies.DATABINDING)
 }

@@ -32,8 +32,8 @@ object Dependencies {
     const val DAGGER = "com.google.dagger:dagger:${BuildDependenciesVersions.DAGGER}"
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${BuildDependenciesVersions.RETROFIT}"
     const val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-gson:${BuildDependenciesVersions.RETROFIT}"
-    const val LIVEDATA_KTX = "androidx.lifecycle:lifecycle-livedata-ktx:${BuildDependenciesVersions.LIVEDATA_KTX}"
     const val RETROFIT_SERIALIZATION = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${BuildDependenciesVersions.RETROFIT_SERIALIZATION}"
+    const val TYPED_DATASTORE = "androidx.datastore:datastore:${BuildDependenciesVersions.TYPED_DATASTORE}"
 
     object MerseyLibs {
         private const val base = "com.github.Merseyside.mersey-android-library"
@@ -42,5 +42,4 @@ object Dependencies {
         const val animators = "$base:animators:${BuildDependenciesVersions.MERSEY_LIBS}"
         const val utils = "$base:utils:${BuildDependenciesVersions.MERSEY_LIBS}"
     }
-    
 }

@@ -59,13 +59,17 @@ android {
     }
 }
 
+val androidLibs = listOf(
+    Dependencies.KOTLIN,
+    Dependencies.ANNOTATION,
+    Dependencies.COROUTINES,
+    Dependencies.COROUTINES_ANDROID,
+    Dependencies.DAGGER,
+    Dependencies.SERIALIZATION
+)
+
 dependencies {
-    implementation(Dependencies.KOTLIN)
-    implementation(Dependencies.ANNOTATION)
-    implementation(Dependencies.COROUTINES)
-    implementation(Dependencies.COROUTINES_ANDROID)
-    implementation(Dependencies.DAGGER)
-    implementation(Dependencies.SERIALIZATION)
+    androidLibs.forEach { lib -> implementation(lib) }
 
     kapt(AnnotationProcessorsDependencies.DAGGER)
     kapt(AnnotationProcessorsDependencies.DATABINDING)

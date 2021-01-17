@@ -8,6 +8,20 @@ plugins {
     plugin(BuildPlugins.commonsAndroidLibrary)
 }
 
+val androidLibs = listOf(
+    Dependencies.ROOM,
+    Dependencies.ROOM_KTX,
+    Dependencies.LIFECYCLE_EXTENSIONS,
+    Dependencies.NAVIGATION_UI,
+    Dependencies.FRAGMENT_KTX,
+    Dependencies.CORE_KTX,
+    Dependencies.RETROFIT,
+    Dependencies.RETROFIT_CONVERTER,
+    Dependencies.LOGGING,
+    Dependencies.PAGING,
+    Dependencies.TYPED_DATASTORE
+)
+
 val merseyModules = listOf(
     BuildModules.Libraries.MerseyLibs.archy,
     BuildModules.Libraries.MerseyLibs.utils
@@ -19,22 +33,14 @@ val merseyLibs = listOf(
 )
 
 dependencies {
-    implementation(Dependencies.ROOM)
-    implementation(Dependencies.ROOM_KTX)
-    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
-    implementation(Dependencies.NAVIGATION_UI)
-    implementation(Dependencies.FRAGMENT_KTX)
-    implementation(Dependencies.CORE_KTX)
-    implementation(Dependencies.RETROFIT)
-    implementation(Dependencies.RETROFIT_CONVERTER)
-    implementation(Dependencies.LOGGING)
-    implementation(Dependencies.PAGING)
 
     if (isLocalDependencies()) {
         merseyModules.forEach { module -> api(project(module)) }
     } else {
         merseyLibs.forEach { lib -> api(lib) }
     }
+
+    androidLibs.forEach { lib -> implementation(lib) }
 
     kapt(AnnotationProcessorsDependencies.DATABINDING)
     kapt(AnnotationProcessorsDependencies.ROOM)

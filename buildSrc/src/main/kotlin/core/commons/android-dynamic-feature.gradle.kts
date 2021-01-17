@@ -7,7 +7,6 @@ import ProductFlavorProduction
 import ProductFlavorQA
 import core.dependencies.Dependencies
 import core.dependencies.AnnotationProcessorsDependencies
-import core.extensions.implementation
 import core.extensions.kapt
 
 plugins {
@@ -68,24 +67,28 @@ android {
     }
 }
 
+val androidLibs = listOf(
+    Dependencies.APPCOMPAT,
+    Dependencies.COROUTINES,
+    Dependencies.COROUTINES_ANDROID,
+    Dependencies.NAVIGATION_FRAGMENT,
+    Dependencies.NAVIGATION_UI,
+    Dependencies.LIFECYCLE_EXTENSIONS,
+    Dependencies.LIFECYCLE_VIEWMODEL,
+    Dependencies.LIFECYCLE_LIVEDATA,
+    Dependencies.CORE_KTX,
+    Dependencies.ACTIVITY_KTX,
+    Dependencies.FRAGMENT_KTX,
+    Dependencies.CONSTRAINT_LAYOUT,
+    Dependencies.DAGGER
+)
+
 dependencies {
     implementation(project(BuildModules.APP))
     implementation(project(BuildModules.CORE))
     implementation(project(BuildModules.Commons.UI))
 
-    implementation(Dependencies.KOTLIN)
-    implementation(Dependencies.APPCOMPAT)
-    implementation(Dependencies.COROUTINES)
-    implementation(Dependencies.COROUTINES_ANDROID)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
-    implementation(Dependencies.NAVIGATION_UI)
-    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
-    implementation(Dependencies.LIFECYCLE_VIEWMODEL)
-    implementation(Dependencies.CORE_KTX)
-    implementation(Dependencies.ACTIVITY_KTX)
-    implementation(Dependencies.FRAGMENT_KTX)
-    implementation(Dependencies.CONSTRAINT_LAYOUT)
-    implementation(Dependencies.DAGGER)
+    androidLibs.forEach { lib -> implementation(lib) }
 
     kapt(AnnotationProcessorsDependencies.DAGGER)
     kapt(AnnotationProcessorsDependencies.DATABINDING)

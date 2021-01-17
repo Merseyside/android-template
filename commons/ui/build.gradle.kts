@@ -18,24 +18,28 @@ val merseyLibs = listOf(
     Dependencies.MerseyLibs.utils
 )
 
+val androidLibs = listOf(
+    Dependencies.LIFECYCLE_EXTENSIONS,
+    Dependencies.LIFECYCLE_VIEWMODEL,
+    Dependencies.CONSTRAINT_LAYOUT,
+    Dependencies.RECYCLE_VIEW,
+    Dependencies.CORE_KTX,
+    Dependencies.FRAGMENT_KTX,
+    Dependencies.NAVIGATION_FRAGMENT,
+    Dependencies.NAVIGATION_UI,
+    Dependencies.PAGING
+)
+
 dependencies {
     implementation(project(BuildModules.CORE))
-
-    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
-    implementation(Dependencies.LIFECYCLE_VIEWMODEL)
-    implementation(Dependencies.CONSTRAINT_LAYOUT)
-    implementation(Dependencies.RECYCLE_VIEW)
-    implementation(Dependencies.CORE_KTX)
-    implementation(Dependencies.FRAGMENT_KTX)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
-    implementation(Dependencies.NAVIGATION_UI)
-    implementation(Dependencies.PAGING)
 
     if (isLocalDependencies()) {
         merseyModules.forEach { module -> api(project(module)) }
     } else {
         merseyLibs.forEach { lib -> api(lib) }
     }
+
+    androidLibs.forEach { lib -> implementation(lib) }
 
     kapt(AnnotationProcessorsDependencies.DATABINDING)
 }
