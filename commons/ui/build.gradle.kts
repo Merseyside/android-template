@@ -19,7 +19,6 @@ val merseyLibs = listOf(
 )
 
 val androidLibs = listOf(
-    Dependencies.LIFECYCLE_EXTENSIONS,
     Dependencies.LIFECYCLE_VIEWMODEL,
     Dependencies.CONSTRAINT_LAYOUT,
     Dependencies.RECYCLE_VIEW,
@@ -40,6 +39,4 @@ dependencies {
     }
 
     androidLibs.forEach { lib -> implementation(lib) }
-
-    kapt(AnnotationProcessorsDependencies.DATABINDING)
 }

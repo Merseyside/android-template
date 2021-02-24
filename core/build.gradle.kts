@@ -11,7 +11,6 @@ plugins {
 val androidLibs = listOf(
     Dependencies.ROOM,
     Dependencies.ROOM_KTX,
-    Dependencies.LIFECYCLE_EXTENSIONS,
     Dependencies.NAVIGATION_UI,
     Dependencies.FRAGMENT_KTX,
     Dependencies.CORE_KTX,
@@ -42,6 +41,5 @@ dependencies {
 
     androidLibs.forEach { lib -> implementation(lib) }
 
-    kapt(AnnotationProcessorsDependencies.DATABINDING)
     kapt(AnnotationProcessorsDependencies.ROOM)
 }

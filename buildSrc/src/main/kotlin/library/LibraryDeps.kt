@@ -7,7 +7,7 @@ object LibraryDeps {
 
         val androidLibrary = PluginDesc(
             id = "com.android.library",
-            module = "com.android.tools.build:gradle:${LibraryVersions.Plugins.android}"
+            module = "com.android.tools.build:gradle:${LibraryVersions.Plugins.gradle}"
         )
 
         val kotlinMultiplatform = PluginDesc(
@@ -47,7 +47,10 @@ object LibraryDeps {
     object Libs {
         object Android {
             val coroutines = AndroidLibrary(
-                name = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibraryVersions.Common.coroutines}"
+                name = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibraryVersions.Libs.Android.coroutines}"
+            )
+            val serialization = AndroidLibrary(
+                name = "org.jetbrains.kotlinx:kotlinx-serialization-json:${LibraryVersions.Common.serialization}"
             )
             val appCompat = AndroidLibrary(
                 name = "androidx.appcompat:appcompat:${LibraryVersions.Libs.Android.appCompat}"
@@ -65,10 +68,13 @@ object LibraryDeps {
                 name = "androidx.constraintlayout:constraintlayout:${LibraryVersions.Libs.Android.constraintLayout}"
             )
             val lifecycle = AndroidLibrary(
-                name = "androidx.lifecycle:lifecycle-extensions:${LibraryVersions.Libs.Android.lifecycle_extensions}"
+                name = "androidx.lifecycle:lifecycle-extensions:${LibraryVersions.Libs.Android.lifecycle_extension}"
             )
             val lifecycleViewModel = AndroidLibrary(
                 name = "androidx.lifecycle:lifecycle-viewmodel-ktx:${LibraryVersions.Libs.Android.lifecycle}"
+            )
+            val lifecycleLiveDataKtx = AndroidLibrary(
+                name = "androidx.lifecycle:lifecycle-livedata-ktx:${LibraryVersions.Libs.Android.lifecycle}"
             )
             val cardView = AndroidLibrary(
                 name = "androidx.cardview:cardview:${LibraryVersions.Libs.Android.cardView}"
@@ -118,6 +124,12 @@ object LibraryDeps {
             val daggerCompiler = KaptLibrary(
                 name = "com.google.dagger:dagger-compiler:${LibraryVersions.Libs.Android.dagger}"
             )
+            val koin = AndroidLibrary(
+                name = "org.koin:koin-android:${LibraryVersions.Common.koin}"
+            )
+            val koinViewModels = AndroidLibrary(
+                name = "org.koin:koin-android-viewmodel:${LibraryVersions.Common.koin}"
+            )
             val navigation = AndroidLibrary(
                 name = "androidx.navigation:navigation-fragment-ktx:${LibraryVersions.Libs.Android.navigation}"
             )
@@ -136,6 +148,18 @@ object LibraryDeps {
             val coil = AndroidLibrary(
                 name = "io.coil-kt:coil:${LibraryVersions.Libs.Android.coil}"
             )
+            val filemanager = AndroidLibrary(
+                name = "com.github.Merseyside:android-filemanager:${LibraryVersions.Libs.Android.filemanager}"
+            )
+            val typedDatastore = AndroidLibrary(
+                name = "androidx.datastore:datastore:${LibraryVersions.Libs.Android.typedDataStore}"
+            )
+            val mokoMvvmDatabinding = AndroidLibrary(
+                name = "dev.icerock.moko:mvvm-databinding:${LibraryVersions.Libs.Android.mokoMvvm}"
+            )
+            val mokoMvvmViewbinding = AndroidLibrary(
+                name = "dev.icerock.moko:mvvm-viewbinding:${LibraryVersions.Libs.Android.mokoMvvm}"
+            )
         }
 
         object MultiPlatform {
@@ -146,17 +170,20 @@ object LibraryDeps {
             val coroutines = MultiPlatformLibrary(
                 android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibraryVersions.Common.coroutines}",
                 common = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibraryVersions.Common.coroutines}",
-                ios = "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${LibraryVersions.Common.coroutines}"
+                iosX64 = "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${LibraryVersions.Common.coroutines}",
+                iosArm64 = "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${LibraryVersions.Common.coroutines}"
             )
-            val serialization = MultiPlatformLibrary(
-                android = "org.jetbrains.kotlinx:kotlinx-serialization-json:${LibraryVersions.Common.serialization}",
-                common = "org.jetbrains.kotlinx:kotlinx-serialization-json:${LibraryVersions.Common.serialization}",
-                ios = "org.jetbrains.kotlinx:kotlinx-serialization-json:${LibraryVersions.Common.serialization}"
+            val serializationJson = MultiPlatformLibrary(
+                common = "org.jetbrains.kotlinx:kotlinx-serialization-json:${LibraryVersions.Common.serialization}"
+            )
+            val serializationProtobuf = MultiPlatformLibrary(
+                common = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf:${LibraryVersions.Common.serialization}"
             )
             val ktorClient = MultiPlatformLibrary(
                 android = "io.ktor:ktor-client-android:${LibraryVersions.Libs.MultiPlatform.ktor}",
                 common = "io.ktor:ktor-client-core:${LibraryVersions.Libs.MultiPlatform.ktor}",
-                ios = "io.ktor:ktor-client-ios:${LibraryVersions.Libs.MultiPlatform.ktor}"
+                iosX64 = "io.ktor:ktor-client-ios:${LibraryVersions.Libs.MultiPlatform.ktor}",
+                iosArm64 = "io.ktor:ktor-client-ios:${LibraryVersions.Libs.MultiPlatform.ktor}"
             )
             val mokoMvvm = MultiPlatformLibrary(
                 common = "dev.icerock.moko:mvvm:${LibraryVersions.Libs.MultiPlatform.mokoMvvm}",
@@ -168,8 +195,8 @@ object LibraryDeps {
                 iosX64 = "dev.icerock.moko:resources-iosx64:${LibraryVersions.Libs.MultiPlatform.mokoResources}",
                 iosArm64 = "dev.icerock.moko:resources-iosarm64:${LibraryVersions.Libs.MultiPlatform.mokoResources}"
             )
-            val kodein = MultiPlatformLibrary(
-                common = "org.kodein.di:kodein-di:${LibraryVersions.Libs.MultiPlatform.kodein}"
+            val koin = MultiPlatformLibrary(
+                common = "org.koin:koin-android:${LibraryVersions.Common.koin}"
             )
             val sqlDelight = MultiPlatformLibrary(
                 common = "com.squareup.sqldelight:runtime:${LibraryVersions.Libs.MultiPlatform.sqlDelight}",

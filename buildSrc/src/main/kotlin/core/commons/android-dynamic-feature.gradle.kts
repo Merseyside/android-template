@@ -70,10 +70,8 @@ android {
 val androidLibs = listOf(
     Dependencies.APPCOMPAT,
     Dependencies.COROUTINES,
-    Dependencies.COROUTINES_ANDROID,
     Dependencies.NAVIGATION_FRAGMENT,
     Dependencies.NAVIGATION_UI,
-    Dependencies.LIFECYCLE_EXTENSIONS,
     Dependencies.LIFECYCLE_VIEWMODEL,
     Dependencies.LIFECYCLE_LIVEDATA,
     Dependencies.CORE_KTX,
@@ -91,6 +89,5 @@ dependencies {
     androidLibs.forEach { lib -> implementation(lib) }
 
     kapt(AnnotationProcessorsDependencies.DAGGER)
-    kapt(AnnotationProcessorsDependencies.DATABINDING)
     kapt(AnnotationProcessorsDependencies.ROOM)
 }

@@ -14,8 +14,8 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
         return R.layout.activity_main
     }
 
-    override fun getToolbar(): Toolbar? {
-        return binding.toolbar
+    override fun getToolbar(): Toolbar {
+        return getBinding().toolbar
     }
 
     override fun getFragmentContainer(): Int? {

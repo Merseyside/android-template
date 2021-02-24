@@ -9,8 +9,7 @@ object Dependencies {
     const val APPCOMPAT = "androidx.appcompat:appcompat:${BuildDependenciesVersions.APPCOMPAT}"
     const val ANNOTATION = "androidx.annotation:annotation:${BuildDependenciesVersions.ANNOTATION}"
     const val MATERIAL = "com.google.android.material:material:${BuildDependenciesVersions.MATERIAL}"
-    const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${BuildDependenciesVersions.COROUTINES}"
-    const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${BuildDependenciesVersions.COROUTINES}"
+    const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${BuildDependenciesVersions.COROUTINES}"
     const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:${BuildDependenciesVersions.SERIALIZATION}"
     const val ROOM = "androidx.room:room-runtime:${BuildDependenciesVersions.ROOM}"
     const val ROOM_KTX = "androidx.room:room-ktx:${BuildDependenciesVersions.ROOM}"
@@ -18,9 +17,8 @@ object Dependencies {
     const val CARD_VIEW = "androidx.cardview:cardview:${BuildDependenciesVersions.CARD_VIEW}"
     const val NAVIGATION_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${BuildDependenciesVersions.NAVIGATION}"
     const val NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:${BuildDependenciesVersions.NAVIGATION}"
-    const val LIFECYCLE_EXTENSIONS = "androidx.lifecycle:lifecycle-extensions:${BuildDependenciesVersions.LIFECYCLE_EXTENSION}"
     const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${BuildDependenciesVersions.LIFECYCLE}"
-    const val LIFECYCLE_SCOPE = "androidx.lifecycle:lifecycle-runtime-ktx:${BuildDependenciesVersions.LIFECYCLE}"
+    const val LIFECYCLE_VIEWMODEL_SAVEDSTATE = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${BuildDependenciesVersions.LIFECYCLE}"
     const val LIFECYCLE_LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${BuildDependenciesVersions.LIFECYCLE}"
     const val CORE_KTX = "androidx.core:core-ktx:${BuildDependenciesVersions.CORE_KTX}"
     const val ACTIVITY_KTX = "androidx.activity:activity:${BuildDependenciesVersions.ACTIVITY_KTX}"
@@ -34,6 +32,7 @@ object Dependencies {
     const val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-gson:${BuildDependenciesVersions.RETROFIT}"
     const val RETROFIT_SERIALIZATION = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${BuildDependenciesVersions.RETROFIT_SERIALIZATION}"
     const val TYPED_DATASTORE = "androidx.datastore:datastore:${BuildDependenciesVersions.TYPED_DATASTORE}"
+    const val COIL = "io.coil-kt:coil:${BuildDependenciesVersions.COIL}"
 
     object MerseyLibs {
         private const val base = "com.github.Merseyside.mersey-android-library"

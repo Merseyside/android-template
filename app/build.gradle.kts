@@ -1,6 +1,5 @@
 import core.dependencies.Dependencies
 import core.isLocalDependencies
-import core.dependencies.AnnotationProcessorsDependencies
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -91,7 +90,6 @@ val androidLibs = listOf(
     Dependencies.NAVIGATION_FRAGMENT,
     Dependencies.FRAGMENT_KTX,
     Dependencies.RECYCLE_VIEW,
-    Dependencies.LIFECYCLE_EXTENSIONS,
     Dependencies.LIFECYCLE_VIEWMODEL,
     Dependencies.CONSTRAINT_LAYOUT,
     Dependencies.DAGGER,

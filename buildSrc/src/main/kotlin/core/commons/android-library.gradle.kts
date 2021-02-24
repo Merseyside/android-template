@@ -63,7 +63,6 @@ val androidLibs = listOf(
     Dependencies.KOTLIN,
     Dependencies.ANNOTATION,
     Dependencies.COROUTINES,
-    Dependencies.COROUTINES_ANDROID,
     Dependencies.DAGGER,
     Dependencies.SERIALIZATION
 )
@@ -72,5 +71,4 @@ dependencies {
     androidLibs.forEach { lib -> implementation(lib) }
 
     kapt(AnnotationProcessorsDependencies.DAGGER)
-    kapt(AnnotationProcessorsDependencies.DATABINDING)
 }
