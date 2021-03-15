@@ -2,8 +2,8 @@ plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
     `kotlin-dsl-precompiled-script-plugins`
-    kotlin("jvm") version "1.4.21"
-    kotlin("plugin.serialization") version "1.4.21"
+    kotlin("jvm") version "1.4.31"
+    kotlin("plugin.serialization") version "1.4.31"
 }
 
 repositories {
@@ -11,15 +11,13 @@ repositories {
     google()
     mavenCentral()
 
-    maven("https://dl.bintray.com/icerockdev/plugins")
     maven("https://plugins.gradle.org/m2/")
     maven("https://oss.sonatype.org/content/repositories/snapshots")
     maven("https://ci.android.com/builds/submitted/5837096/androidx_snapshot/latest/repository")
 }
 
-val kotlin = "1.4.21"
+val kotlin = "1.4.31"
 val gradle = "4.1.1"
-val multiplatform = "0.8.0"
 val navigation = "2.3.0-alpha02"
 val graphGenerator = "0.6.0-SNAPSHOT"
 val detect = "1.2.2"
@@ -32,15 +30,11 @@ val mavenVersion = "2.1"
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin")
     implementation("com.android.tools.build:gradle:$gradle")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin")
     implementation("org.jetbrains.kotlin:kotlin-serialization:$kotlin")
     implementation("androidx.navigation:navigation-safe-args-gradle-plugin:$navigation")
-    implementation("dev.icerock:mobile-multiplatform:$multiplatform")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detect")
     implementation("com.pinterest:ktlint:$ktlint")
     implementation("com.github.ben-manes:gradle-versions-plugin:$gradleVersions")
-
-    implementation("com.github.dcendents:android-maven-gradle-plugin:$mavenVersion")
 }
 
 kotlinDslPluginOptions {
